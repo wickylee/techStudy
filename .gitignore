@@ -83,7 +83,6 @@ celerybeat-schedule
 *.sage.py
 
 # Environments
-pyvenv
 .env
 .venv
 env/
@@ -106,4 +105,9 @@ venv.bak/
 .mypy_cache/
 
 # ignore in project
-node_modules
+node_modules/
+techstudy/frontend/static/
+techstudy/frontend/static/main.js
+techstudy/frontend/uploads/
+techstudy/frontend/media/
+pyvenv/

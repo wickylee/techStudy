@@ -1,27 +1,76 @@
 const path = require('path')
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+// const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-
-  entry: './techstudy/frontend/src/index.js',
+ // mode: "development", // "production" | "development" | "none"
+  // watch: isDevelopment ? true : false,
+  // watchOptions: {
+  //   ignored: ['files/**/*.js', 'node_modules']
+  // },
+  entry: './techStudy/frontend/src/index.js',
+  //entry: './isApp/frontend/demo/index.js',
   output: {
-    path: path.resolve(__dirname, 'techstudy/frontend/static'), 
-    filename: 'main.js',          
-    //publicPath: './licensepivot/frontend/static/'
+    path: path.resolve(__dirname, 'techStudy/frontend/static'), 
+    filename: 'main.js', 
+    //globalObject: 'this'         
+    //publicPath: './techStudy/frontend/static'
   },
-
+  plugins: [
+      new MiniCssExtractPlugin({filename: "./css/main.css"}) ,
+      // new CopyWebpackPlugin([
+      //   {
+      //     from: 'node_modules/pdfjs-dist/cmaps/',
+      //     to: 'cmaps/'
+      //   },
+      // ]),
+    ],
+  // optimization: {
+  //  minimize: true,
+  //   splitChunks: {
+  //   chunks: 'all'
+  //   }
+  // },
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader"
+         loader: "babel-loader"
         }
       },
       {
-        test: /\.scss$/,
-        exclude: /node_modules/,
-        use: ['style-loader', 'css-loader', 'sass-loader']
+        test: /\.module\.s(a|c)ss$/,
+        loader: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true
+            }
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              modules: true
+            }
+          }
+        ]
+      },
+      {
+        test: /\.s(a|c)ss$/,
+        exclude: /\.module.(s(a|c)ss)$/,
+        loader: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              modules: true
+            }
+          }
+        ]
       },
       {
         test: /\.(ttf|eot|svg)$/,
@@ -30,7 +79,7 @@ module.exports = {
           options: {
             name: "[hash].[ext]",
             outputPath: './css/fonts/',
-            publicPath: 'static/css/fonts/'
+            publicPath: 'fonts/'
           }
         }
       },
@@ -41,7 +90,7 @@ module.exports = {
           options: {
             name: "[hash].[ext]",
             outputPath: './css/fonts/',
-            publicPath: 'static/css/fonts/',
+            publicPath: 'fonts/',
             limit: 5000,
             mimetype: "application/font-woff"
           }
@@ -50,6 +99,6 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx', '.scss']
+    extensions: ["*", ".js", ".jsx", '.scss']
   }
 };

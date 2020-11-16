@@ -1,0 +1,73 @@
+@import "~normalize.css";
+@import "~@blueprintjs/core/lib/css/blueprint.css";
+@import "~@blueprintjs/icons/lib/css/blueprint-icons.css";
+@import "~@blueprintjs/datetime/lib/css/blueprint-datetime.css";
+@import '~Video.js/dist/Video-js.css';
+// @import "colors";
+// @import "mixins";
+// @import "variables";
+
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+// .app {
+//   width: 100vw;
+//   height: 100vh;
+// }
+
+// .app-root {
+//   font: 1em sans-serif;
+//   color: #d3d2d2;
+//   padding: 10px;
+//   margin: 10px;
+//   border: 1px solid #4075ad;
+// }
+
+// .theme-selector {
+//   width: 100%;
+//   height: auto;
+//   padding: 10px;
+//   background-color: #8f8f8f;
+// }
+
+// .app-container {
+//   @include themify($themes) {
+//     color: themed("textColor");
+//     background-color: themed("backgroundColor");
+//   }
+
+//   & .ui-com {
+//     font-family: sans-serif;
+//     font-weight: lighter;
+//   }
+
+//   & .ui-button {
+//     cursor: pointer;
+//     border-radius: 5px;
+//     padding: 15px 32px;
+//     display: inline-block;
+//     transition: color 0.1s, border-color 0.1s, background-color 0.1s;
+
+//     @include themify($themes) {
+//       border: themed("buttonBorder");
+//       color: themed("buttonTextColor");
+//       border-color: themed("buttonTextColor");
+//       background-color: themed("buttonColor");
+//       text-transform: themed("buttonTextTransform");
+
+//       &:hover {
+//         color: themed("buttonTextHoverColor");
+//         border-color: themed("buttonTextHoverColor");
+//         background-color: themed("buttonHoverColor");
+//       }
+//     }
+//   }
+// }

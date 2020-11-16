@@ -16,10 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
+from django.conf.urls import url
 from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # filepond
+    #client side, you need to set the endpoints of the process, revert, fetch, load and restore functions to match the endpoint
+    url(r'^fp/', include('django_drf_filepond.urls')),
     # for backend
     path('api/', include('backend.urls')),
     # for frontend

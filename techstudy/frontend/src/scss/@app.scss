@@ -1,0 +1,27 @@
+@import "~@blueprintjs/core/lib/css/blueprint.css";
+@import "~@blueprintjs/icons/lib/css/blueprint-icons.css";
+@import "~@blueprintjs/datetime/lib/css/blueprint-datetime.css";
+@import '~filepond/dist/filepond.min.css';
+@import '~filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css';
+@import '~Video.js/dist/Video-js.css';
+
+.app {
+    width: 100vw;
+    height: 100vh;
+}
+
+.root-note {
+    font: 1em sans-serif;
+    color: #3a3a3a;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #354d66;
+}
+
+.tech-name {
+    background-clip: #adadad;
+}
+
+.filepond--item {
+    width: calc(33.33% - .5em);
+}

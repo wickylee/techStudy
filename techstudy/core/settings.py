@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     # 3rd party 
     'rest_framework', # enable rest framework
     'corsheaders',  # for cors policies
+    'django_drf_filepond'
 ]
 
 MIDDLEWARE = [
@@ -140,6 +141,9 @@ STATIC_ROOT = os.path.join(BASE_DIR,'frontend\static')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'frontend\media')
 
+DJANGO_DRF_FILEPOND_UPLOAD_TMP = os.path.join(BASE_DIR,'frontend\\uploads')
+
+DJANGO_DRF_FILEPOND_FILE_STORE_PATH = os.path.join(BASE_DIR,'frontend\\media')
 # REST_FRAMEWORK = {
 #     'DEFAULT_PERMISSION_CLASSES': (
 #         'rest_framework.permissions.IsAuthenticated',

@@ -1,11 +1,15 @@
-import "./css/app";
+// import "./css/apptheme";
+// import "./scss/apptheme";
+import "./css/try_dnd";
 import React, { Suspense } from "react";
 import ReactDOM from "react-dom";
-import App from "./app";
+// import AppTheming from "./apptheming";
+import App from "./App";
 
 ReactDOM.render(
-  <Suspense fallback="loading...">
+  // <Suspense fallback="loading...">
     <App />
-  </Suspense>,
+  // </Suspense>
+  ,
   document.getElementById("app")
 );
